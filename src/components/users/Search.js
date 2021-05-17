@@ -12,9 +12,13 @@ class Search extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    // console.log(this.state.text);
-    this.props.searchUsers(this.state.text);
-    this.setState({ text: '' });
+    if (this.state.text === '') {
+      this.props.setAlert('Please enter something', 'light');
+    } else {
+      // console.log(this.state.text);
+      this.props.searchUsers(this.state.text);
+      this.setState({ text: '' });
+    }
   };
 
   onChange = (e) => {
