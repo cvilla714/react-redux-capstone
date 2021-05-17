@@ -1,5 +1,6 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/button-has-type */
+/* eslint-disable react/prop-types */
 /* eslint-disable react/state-in-constructor */
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
@@ -22,6 +23,7 @@ class Search extends Component {
   };
 
   render() {
+    const { showClear, clearUsers } = this.props;
     const { text } = this.state;
     return (
       <div>
@@ -39,6 +41,11 @@ class Search extends Component {
             className="btn btn-dark btn-block"
           />
         </form>
+        {showClear && (
+          <button className="btn btn-light btn-block" onClick={clearUsers}>
+            Clear
+          </button>
+        )}
       </div>
     );
   }
