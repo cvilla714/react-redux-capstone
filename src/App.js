@@ -14,7 +14,11 @@ class App extends Component {
   async componentDidMount() {
     this.setState({ loading: true });
 
-    const res = await axios.get('https://api.github.com/users');
+    const res = await axios.get('https://api.github.com/users', {
+      headers: {
+        Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
+      },
+    });
 
     this.setState({ users: res.data, loading: false });
   }
