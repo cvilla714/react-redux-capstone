@@ -1,17 +1,31 @@
+/* eslint-disable react/state-in-constructor */
 import React, { Component } from 'react';
+import axios from 'axios';
 import Navbar from './components/layout/Navbar';
 import Users from './components/users/Users';
 import './App.css';
 
-// eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
+  state = {
+    users: [],
+    loading: false,
+  };
+
+  async componentDidMount() {
+    this.setState({ loading: true });
+
+    const res = await axios.get('https://api.github.com/users');
+
+    this.setState({ users: res.data, loading: false });
+  }
+
   render() {
+    const { loading, users } = this.state;
     return (
       <div className="App">
-        {/* <Navbar title="GitHub Finter" icon="fab fa-github" /> */}
         <Navbar />
         <div className="container">
-          <Users />
+          <Users loading={loading} users={users} />
         </div>
       </div>
     );
