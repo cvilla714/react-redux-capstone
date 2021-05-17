@@ -1,40 +1,25 @@
-/* eslint-disable camelcase */
-/* eslint-disable react/state-in-constructor */
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/no-unused-state */
-/* eslint-disable react/prefer-stateless-function */
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class UserItem extends Component {
-  //   state = {
-  //     id: 'id',
-  //     login: 'mojombo',
-  //     avatar_url: 'https://avatars.githubusercontent.com/u/1?v=4',
-  //     html_url: 'https://github.com/mojombo',
-  //   };
+const UserItem = ({ user: { login, avatarUrl, htmlUrl } }) => (
+  <div className="card text-center">
+    <img
+      src={avatarUrl}
+      alt=""
+      className="round-img"
+      style={{ width: '60px' }}
+    />
+    <h3>{login}</h3>
+    <div>
+      <a href={htmlUrl} className="btn btn-dark btn-sm-my-1">
+        More Info
+      </a>
+    </div>
+  </div>
+);
 
-  render() {
-    // const { login, avatar_url, html_url } = this.state;
-    const { login, avatar_url, html_url } = this.props.user;
-
-    return (
-      <div className="card text-center">
-        <img
-          src={avatar_url}
-          alt=""
-          className="round-img"
-          style={{ width: '60px' }}
-        />
-        <h3>{login}</h3>
-        <div>
-          <a href={html_url} className="btn btn-dark btn-sm-my-1">
-            More Info
-          </a>
-        </div>
-      </div>
-    );
-  }
-}
+UserItem.propTypes = {
+  user: PropTypes.arrayOf(Object).isRequired,
+};
 
 export default UserItem;
