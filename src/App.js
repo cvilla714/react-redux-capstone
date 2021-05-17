@@ -12,6 +12,7 @@ class App extends Component {
     loading: false,
   };
 
+  //  Defult Search Values
   async componentDidMount() {
     this.setState({ loading: true });
 
@@ -24,13 +25,33 @@ class App extends Component {
     this.setState({ users: res.data, loading: false });
   }
 
+  //   Search Github Users
+  // searchUsers = (text) => {
+  //   console.log(text);
+  // };
+
+  searchUsers = async (text) => {
+    this.setState({ loading: true });
+
+    const res = await axios.get(
+      `https://api.github.com/search/users?q=${text}`,
+      {
+        headers: {
+          Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
+        },
+      },
+    );
+
+    this.setState({ users: res.data.items, loading: false });
+  };
+
   render() {
     const { loading, users } = this.state;
     return (
       <div className="App">
         <Navbar />
         <div className="container">
-          <Search />
+          <Search searchUsers={this.searchUsers} />
           <Users loading={loading} users={users} />
         </div>
       </div>
