@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/state-in-constructor */
 /* eslint-disable react/prefer-stateless-function */
@@ -10,7 +11,9 @@ class Search extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state.text);
+    // console.log(this.state.text);
+    this.props.searchUsers(this.state.text);
+    this.setState({ text: '' });
   };
 
   onChange = (e) => {
