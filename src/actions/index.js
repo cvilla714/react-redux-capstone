@@ -2,7 +2,11 @@
 /* eslint-disable import/prefer-default-export */
 import axios from 'axios';
 import {
-  CLEAR_USERS, GET_USER, SEARCH_USERS, SET_LOADING,
+  CLEAR_USERS,
+  GET_REPOS,
+  GET_USER,
+  SEARCH_USERS,
+  SET_LOADING,
 } from './types';
 
 //  Set Loading
@@ -30,7 +34,7 @@ export const searchUsers = (text) => async (dispatch) => {
 
 //  Get user
 export const getUser = (username) => async (dispatch) => {
-  setLoading(true);
+  setLoading();
 
   const res = await axios.get(`https://api.github.com/users/${username}`, {
     headers: {
@@ -47,6 +51,26 @@ export const getUser = (username) => async (dispatch) => {
 };
 
 //  Get Repos
+export const getUserRepos = (username) => async (dispatch) => {
+  setLoading();
+
+  const res = await axios.get(
+    `https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc`,
+    {
+      headers: {
+        Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
+      },
+    },
+  );
+  console.log(res.data);
+  dispatch({
+    type: GET_REPOS,
+    payload: res.data,
+  });
+
+  // setRepos(res.data);
+  // setLoading(false);
+};
 
 //  Clear Users
 export const clearUsers = () => ({
