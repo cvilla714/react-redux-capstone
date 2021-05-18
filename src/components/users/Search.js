@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { searchUsers } from '../../actions/index';
+import { searchUsers, clearUsers } from '../../actions/index';
 
 const Search = ({
-  searchUsers, showClear, clearUsers, setAlert,
+  searchUsers, clearUsers, setAlert, users,
 }) => {
   const [text, setText] = useState('');
 
@@ -38,7 +38,7 @@ const Search = ({
           className="btn btn-dark btn-block"
         />
       </form>
-      {showClear && (
+      {users.length > 0 && (
         <button
           className="btn btn-light btn-block"
           type="button"
@@ -54,12 +54,12 @@ const Search = ({
 Search.propTypes = {
   searchUsers: PropTypes.func.isRequired,
   clearUsers: PropTypes.func.isRequired,
-  showClear: PropTypes.bool.isRequired,
   setAlert: PropTypes.func.isRequired,
+  users: PropTypes.arrayOf(Array).isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  users: state.users,
+  users: state.github.users,
 });
 
-export default connect(mapStateToProps, { searchUsers })(Search);
+export default connect(mapStateToProps, { searchUsers, clearUsers })(Search);
