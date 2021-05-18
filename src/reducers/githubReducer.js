@@ -1,4 +1,4 @@
-import { SEARCH_USERS, SET_LOADING } from '../actions/types';
+import { CLEAR_USERS, SEARCH_USERS, SET_LOADING } from '../actions/types';
 
 const initialState = {
   users: [],
@@ -14,6 +14,12 @@ export default (state = initialState, action) => {
         ...state,
         users: action.payload,
         laoding: false,
+      };
+    case CLEAR_USERS:
+      return {
+        ...state,
+        users: [],
+        loading: false,
       };
     case SET_LOADING:
       return {
