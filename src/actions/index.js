@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable import/prefer-default-export */
 import axios from 'axios';
-import { SEARCH_USERS, SET_LOADING } from './types';
+import { CLEAR_USERS, SEARCH_USERS, SET_LOADING } from './types';
 
 //  Set Loading
 export const setLoading = () => ({
@@ -31,3 +31,8 @@ export const searchUsers = (text) => async (dispatch) => {
 //  Get Repos
 
 //  Clear Users
+export const clearUsers = () => ({
+  type: CLEAR_USERS,
+  // setUsers([]);
+  // setLoading(false);
+});
