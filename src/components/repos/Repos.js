@@ -1,6 +1,7 @@
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable implicit-arrow-linebreak */
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import RepoItem from './RepoItem';
 
@@ -11,4 +12,8 @@ Repos.propTypes = {
   repos: PropTypes.array.isRequired,
 };
 
-export default Repos;
+const mapStateToProps = (state) => ({
+  repos: state.github.repos,
+});
+
+export default connect(mapStateToProps)(Repos);
