@@ -3,6 +3,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import UserItem from './UserItem';
 import Spinner from '../layout/Spinner';
 
@@ -31,4 +32,9 @@ Users.propTypes = {
   loading: PropTypes.bool.isRequired,
 };
 
-export default Users;
+const mapStateToProps = (state) => ({
+  users: state.github.users,
+  loading: state.github.loading,
+});
+
+export default connect(mapStateToProps)(Users);
