@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { searchUsers } from '../../actions/index';
 
 const Search = ({
   searchUsers, showClear, clearUsers, setAlert,
@@ -55,4 +57,9 @@ Search.propTypes = {
   showClear: PropTypes.bool.isRequired,
   setAlert: PropTypes.func.isRequired,
 };
-export default Search;
+
+const mapStateToProps = (state) => ({
+  users: state.users,
+});
+
+export default connect(mapStateToProps, { searchUsers })(Search);
