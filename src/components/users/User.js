@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Repos from '../repos/Repos';
 import Spinner from '../layout/Spinner';
-import { getUser } from '../../actions/index';
+import { getUser, getUserRepos } from '../../actions/index';
 
 const User = ({
   user, loading, getUser, getUserRepos, repos, match,
@@ -129,6 +129,7 @@ User.propTypes = {
 };
 const mapStateToProps = (state) => ({
   user: state.github.user,
+  // repos: state.github.repos,
 });
 
-export default connect(mapStateToProps, { getUser })(User);
+export default connect(mapStateToProps, { getUser, getUserRepos })(User);
