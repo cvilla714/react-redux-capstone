@@ -1,9 +1,11 @@
 /* eslint-disable camelcase */
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Repos from '../repos/Repos';
 import Spinner from '../layout/Spinner';
+import { getUser } from '../../actions/index';
 
 const User = ({
   user, loading, getUser, getUserRepos, repos, match,
@@ -125,5 +127,8 @@ User.propTypes = {
   getUser: PropTypes.func.isRequired,
   getUserRepos: PropTypes.func.isRequired,
 };
+const mapStateToProps = (state) => ({
+  user: state.github.user,
+});
 
-export default User;
+export default connect(mapStateToProps, { getUser })(User);
