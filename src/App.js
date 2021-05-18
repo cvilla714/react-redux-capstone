@@ -13,7 +13,7 @@ import store from './store';
 import './App.css';
 
 const App = () => {
-  const [users, setUsers] = useState([]);
+  // const [users, setUsers] = useState([]);
   const [user, setUser] = useState({});
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -66,10 +66,10 @@ const App = () => {
   };
 
   //  Clear users from state
-  const clearUsers = () => {
-    setUsers([]);
-    setLoading(false);
-  };
+  // const clearUsers = () => {
+  //   setUsers([]);
+  //   setLoading(false);
+  // };
 
   //  Set alert
   const showAlert = (msg, type) => {
@@ -92,11 +92,7 @@ const App = () => {
                 // eslint-disable-next-line no-unused-vars
                 render={(props) => (
                   <>
-                    <Search
-                      clearUsers={clearUsers}
-                      showClear={users.length > 0}
-                      setAlert={showAlert}
-                    />
+                    <Search setAlert={showAlert} />
                     <Users />
                   </>
                 )}
