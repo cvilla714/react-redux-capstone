@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Navbar from './components/layout/Navbar';
@@ -15,7 +15,7 @@ import './App.css';
 const App = () => {
   // const [users, setUsers] = useState([]);
   // const [user, setUser] = useState({});
-  const [repos, setRepos] = useState([]);
+  // const [repos, setRepos] = useState([]);
   // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(false);
   const [alert, setAlert] = useState(null);
@@ -50,21 +50,21 @@ const App = () => {
   // };
 
   //  get Github user repos
-  const getUserRepos = async (username) => {
-    setLoading(true);
+  // const getUserRepos = async (username) => {
+  //   setLoading(true);
 
-    const res = await axios.get(
-      `https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc`,
-      {
-        headers: {
-          Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
-        },
-      },
-    );
+  //   const res = await axios.get(
+  //     `https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc`,
+  //     {
+  //       headers: {
+  //         Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
+  //       },
+  //     },
+  //   );
 
-    setRepos(res.data);
-    setLoading(false);
-  };
+  //   setRepos(res.data);
+  //   setLoading(false);
+  // };
 
   //  Clear users from state
   // const clearUsers = () => {
@@ -102,9 +102,10 @@ const App = () => {
               <Route
                 exact
                 path="/user/:login"
-                render={(props) => (
-                  <User {...props} getUserRepos={getUserRepos} repos={repos} />
-                )}
+                component={User}
+                // render={(props) => (
+                //   <User {...props} getUserRepos={getUserRepos} repos={repos} />
+                // )}
               />
             </Switch>
           </div>
