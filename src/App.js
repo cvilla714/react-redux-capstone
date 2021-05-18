@@ -14,8 +14,9 @@ import './App.css';
 
 const App = () => {
   // const [users, setUsers] = useState([]);
-  const [user, setUser] = useState({});
+  // const [user, setUser] = useState({});
   const [repos, setRepos] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(false);
   const [alert, setAlert] = useState(null);
 
@@ -35,18 +36,18 @@ const App = () => {
   // };
 
   //  get a single Github user
-  const getUser = async (username) => {
-    setLoading(true);
+  // const getUser = async (username) => {
+  //   setLoading(true);
 
-    const res = await axios.get(`https://api.github.com/users/${username}`, {
-      headers: {
-        Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
-      },
-    });
+  //   const res = await axios.get(`https://api.github.com/users/${username}`, {
+  //     headers: {
+  //       Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
+  //     },
+  //   });
 
-    setUser(res.data);
-    setLoading(false);
-  };
+  //   setUser(res.data);
+  //   setLoading(false);
+  // };
 
   //  get Github user repos
   const getUserRepos = async (username) => {
@@ -102,14 +103,7 @@ const App = () => {
                 exact
                 path="/user/:login"
                 render={(props) => (
-                  <User
-                    {...props}
-                    getUser={getUser}
-                    getUserRepos={getUserRepos}
-                    user={user}
-                    repos={repos}
-                    loading={loading}
-                  />
+                  <User {...props} getUserRepos={getUserRepos} repos={repos} />
                 )}
               />
             </Switch>
