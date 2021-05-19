@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { searchUsers, clearUsers } from '../../actions/index';
+import setAlert from '../../actions/alertActions';
 
 const Search = ({
   searchUsers, clearUsers, setAlert, users,
@@ -60,6 +61,9 @@ Search.propTypes = {
 
 const mapStateToProps = (state) => ({
   users: state.github.users,
+  alert: state,
 });
 
-export default connect(mapStateToProps, { searchUsers, clearUsers })(Search);
+export default connect(mapStateToProps, { searchUsers, clearUsers, setAlert })(
+  Search,
+);
