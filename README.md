@@ -15,7 +15,7 @@
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://xenodochial-galileo-622b79.netlify.app/)
 
 ## Getting Started
 
