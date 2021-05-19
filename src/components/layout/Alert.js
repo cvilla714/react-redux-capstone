@@ -1,6 +1,7 @@
 /* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { connect } from 'react-redux';
 
 const Alert = ({ alert }) =>
   alert !== null && (
@@ -9,4 +10,8 @@ const Alert = ({ alert }) =>
     </div>
   );
 
-export default Alert;
+const mapStateToProps = (state) => ({
+  alert: state.alert,
+});
+
+export default connect(mapStateToProps)(Alert);
