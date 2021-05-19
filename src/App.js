@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
-// import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Navbar from './components/layout/Navbar';
@@ -13,64 +12,9 @@ import store from './store';
 import './App.css';
 
 const App = () => {
-  // const [users, setUsers] = useState([]);
-  // const [user, setUser] = useState({});
-  // const [repos, setRepos] = useState([]);
   // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(false);
   const [alert, setAlert] = useState(null);
-
-  // const searchUsers = async (text) => {
-  //   setLoading(true);
-
-  //   const res = await axios.get(
-  //     `https://api.github.com/search/users?q=${text}`,
-  //     {
-  //       headers: {
-  //         Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
-  //       },
-  //     },
-  //   );
-  //   setUsers(res.data.items);
-  //   setLoading(false);
-  // };
-
-  //  get a single Github user
-  // const getUser = async (username) => {
-  //   setLoading(true);
-
-  //   const res = await axios.get(`https://api.github.com/users/${username}`, {
-  //     headers: {
-  //       Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
-  //     },
-  //   });
-
-  //   setUser(res.data);
-  //   setLoading(false);
-  // };
-
-  //  get Github user repos
-  // const getUserRepos = async (username) => {
-  //   setLoading(true);
-
-  //   const res = await axios.get(
-  //     `https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc`,
-  //     {
-  //       headers: {
-  //         Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
-  //       },
-  //     },
-  //   );
-
-  //   setRepos(res.data);
-  //   setLoading(false);
-  // };
-
-  //  Clear users from state
-  // const clearUsers = () => {
-  //   setUsers([]);
-  //   setLoading(false);
-  // };
 
   //  Set alert
   const showAlert = (msg, type) => {
@@ -99,14 +43,7 @@ const App = () => {
                 )}
               />
               <Route exact path="/about" component={About} />
-              <Route
-                exact
-                path="/user/:login"
-                component={User}
-                // render={(props) => (
-                //   <User {...props} getUserRepos={getUserRepos} repos={repos} />
-                // )}
-              />
+              <Route exact path="/user/:login" component={User} />
             </Switch>
           </div>
         </div>
