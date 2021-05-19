@@ -129,7 +129,6 @@ User.propTypes = {
 };
 const mapStateToProps = (state) => ({
   user: state.github.user,
-  // repos: state.github.repos,
 });
 
 export default connect(mapStateToProps, { getUser, getUserRepos })(User);
