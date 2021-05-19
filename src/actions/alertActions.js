@@ -1,15 +1,8 @@
-import { REMOVE_ALERT, SET_ALERT } from './types';
+import { SET_ALERT } from './types';
 
-const setAlert = (msg, type) => ({
+const setAlert = (payload) => ({
   type: SET_ALERT,
-  payload: { msg, type },
+  payload,
 });
-
-setTimeout(
-  () => ({
-    type: REMOVE_ALERT,
-  }),
-  3000,
-);
 
 export default setAlert;
