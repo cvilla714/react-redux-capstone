@@ -34,7 +34,6 @@ export default (state = initialState, action) => {
         loading: false,
       };
     case GET_REPOS:
-      console.log(action.payload);
       return {
         ...state,
         repos: action.payload,
