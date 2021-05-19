@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User component renders correctly 1`] = `
+Array [
+  <a
+    className="btn btn-light"
+    href="/"
+    onClick={[Function]}
+  >
+    Back to Search
+  </a>,
+  "Hireable:",
+  <i
+    className="fas fa-times-circle text-danger"
+  />,
+  <div
+    className="card grid-2"
+  >
+    <div
+      className="all-center"
+    >
+      <img
+        alt=""
+        className="round-img"
+        style={
+          Object {
+            "width": "150px",
+          }
+        }
+      />
+      <h1 />
+      <p>
+        Location:
+      </p>
+    </div>
+    <div>
+      <a
+        className="btn btn-dark my-1"
+      >
+        Visit Github Profiel
+      </a>
+      <ul>
+        <li />
+        <li />
+        <li />
+      </ul>
+    </div>
+  </div>,
+  <div
+    className="card text-center"
+  >
+    <div
+      className="badge badge-primary"
+    >
+      Followers:
+    </div>
+    <div
+      className="badge badge-success"
+    >
+      Following:
+    </div>
+    <div
+      className="badge badge-light"
+    >
+      Public Repos:
+    </div>
+    <div
+      className="badge badge-dark"
+    >
+      Public Gists:
+    </div>
+  </div>,
+  ",",
+]
+`;
