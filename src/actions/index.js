@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable import/prefer-default-export */
 import axios from 'axios';
 import {
   CLEAR_USERS,
@@ -9,14 +7,11 @@ import {
   SET_LOADING,
 } from './types';
 
-//  Set Loading
 export const setLoading = () => ({
   type: SET_LOADING,
 });
 
-//  Search Users
 export const searchUsers = (text) => async (dispatch) => {
-  //   setLoading(true);
   setLoading();
 
   const res = await axios.get(`https://api.github.com/search/users?q=${text}`, {
@@ -28,11 +23,8 @@ export const searchUsers = (text) => async (dispatch) => {
     type: SEARCH_USERS,
     payload: res.data.items,
   });
-  //   setUsers(res.data.items);
-  //   setLoading(false);
 };
 
-//  Get user
 export const getUser = (username) => async (dispatch) => {
   setLoading();
 
@@ -45,12 +37,8 @@ export const getUser = (username) => async (dispatch) => {
     type: GET_USER,
     payload: res.data,
   });
-
-  // setUser(res.data);
-  // setLoading(false);
 };
 
-//  Get Repos
 export const getUserRepos = (username) => async (dispatch) => {
   setLoading();
 
@@ -62,19 +50,13 @@ export const getUserRepos = (username) => async (dispatch) => {
       },
     },
   );
-  console.log(res.data);
+
   dispatch({
     type: GET_REPOS,
     payload: res.data,
   });
-
-  // setRepos(res.data);
-  // setLoading(false);
 };
 
-//  Clear Users
 export const clearUsers = () => ({
   type: CLEAR_USERS,
-  // setUsers([]);
-  // setLoading(false);
 });
