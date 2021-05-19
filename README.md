@@ -1,8 +1,8 @@
-# GitHub finder
+# GitHub Profile Finder
 
 > Project was about using the GitHub API to pull GittHub profiles
-> the latest repost, information such as name, location, hireable and more
-> ![screenshot]()
+> their 5 latest repost, information such as name, location, hireable and more
+> ![screenshot](./app_screenshot.png)
 
 ## Built With
 
@@ -50,12 +50,17 @@
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page]().
+Feel free to check the [issues page](https://github.com/cvilla714/react-redux-capstone/pulls).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
+## Acknowledgment
+
+- Microverse
+- Marc-Antoine Roy on Behance
+
 ## 📝 License
 
-This project is [MIT]() licensed.
+This project is [MIT](https://github.com/cvilla714/react-redux-capstone/blob/development/LICENSE) licensed.
