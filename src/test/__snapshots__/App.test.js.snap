@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the correct content for the Calculator Page 1`] = `
+<div
+  className="App"
+>
+  <nav
+    className="navbar bg-primary"
+  >
+    <h1>
+      <i
+        className="fab fa-github"
+      />
+      GitHub Finder
+    </h1>
+    <ul>
+      <li>
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          href="/about"
+          onClick={[Function]}
+        >
+          About
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div
+    className="container"
+  >
+    <div>
+      <div>
+        <form
+          className="form"
+          onSubmit={[Function]}
+        >
+          <input
+            name="text"
+            onChange={[Function]}
+            placeholder="Search User..."
+            type="text"
+            value=""
+          />
+          <input
+            className="btn btn-dark btn-block"
+            type="submit"
+            value="Search"
+          />
+        </form>
+      </div>
+      <div
+        style={
+          Object {
+            "display": "grid",
+            "gridGap": "1rem",
+            "gridTemplateColumns": "repeat(3,1fr)",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
