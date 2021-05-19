@@ -12,11 +12,8 @@ import store from './store';
 import './App.css';
 
 const App = () => {
-  // eslint-disable-next-line no-unused-vars
-  const [loading, setLoading] = useState(false);
   const [alert, setAlert] = useState(null);
 
-  //  Set alert
   const showAlert = (msg, type) => {
     setAlert({ msg, type });
 
