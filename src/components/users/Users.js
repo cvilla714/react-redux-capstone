@@ -1,6 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
-/* eslint-disable react/prop-types */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -28,7 +25,7 @@ const Users = ({ users, loading }) => {
 };
 
 Users.propTypes = {
-  users: PropTypes.array.isRequired,
+  users: PropTypes.arrayOf(Array).isRequired,
   loading: PropTypes.bool.isRequired,
 };
 
