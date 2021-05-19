@@ -4,6 +4,7 @@ import {
   GET_USER,
   SEARCH_USERS,
   SET_LOADING,
+  LOGS_ERROR,
 } from '../actions/types';
 
 const initialState = {
@@ -44,6 +45,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         loading: true,
+      };
+    case LOGS_ERROR:
+      return {
+        ...state,
+        error: action.payload,
       };
     default:
       return state;
