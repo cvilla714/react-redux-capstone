@@ -12,7 +12,8 @@ const Search = ({
   const onSubmit = (e) => {
     e.preventDefault();
     if (text === '') {
-      setAlert('Please enter something', 'light');
+      setAlert({ msg: 'Please enter something', type: 'light' });
+      setTimeout(() => setAlert(null), 3000);
     } else {
       searchUsers(text);
       setText('');
