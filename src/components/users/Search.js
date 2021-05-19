@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { searchUsers, clearUsers } from '../../actions/index';
-import setAlert from '../../actions/alertActions';
+import setAlert, { removeAlert } from '../../actions/alertActions';
 
 const Search = ({
-  searchUsers, clearUsers, setAlert, users,
+  searchUsers, clearUsers, setAlert, users, removeAlert,
 }) => {
   const [text, setText] = useState('');
 
@@ -13,7 +13,9 @@ const Search = ({
     e.preventDefault();
     if (text === '') {
       setAlert({ msg: 'Please enter something', type: 'light' });
-      setTimeout(() => setAlert(null), 3000);
+      setTimeout(() => {
+        removeAlert();
+      }, 3000);
     } else {
       searchUsers(text);
       setText('');
@@ -58,6 +60,7 @@ Search.propTypes = {
   clearUsers: PropTypes.func.isRequired,
   setAlert: PropTypes.func.isRequired,
   users: PropTypes.arrayOf(Array).isRequired,
+  removeAlert: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -65,6 +68,9 @@ const mapStateToProps = (state) => ({
   alert: state,
 });
 
-export default connect(mapStateToProps, { searchUsers, clearUsers, setAlert })(
-  Search,
-);
+export default connect(mapStateToProps, {
+  searchUsers,
+  clearUsers,
+  setAlert,
+  removeAlert,
+})(Search);
