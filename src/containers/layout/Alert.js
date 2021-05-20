@@ -8,8 +8,12 @@ const Alert = ({ alert }) => alert !== null && (
 </div>
 );
 
+Alert.defaultProps = {
+  alert: '',
+};
+
 Alert.propTypes = {
-  alert: PropTypes.string.isRequired,
+  alert: PropTypes.string,
 };
 
 const mapStateToProps = (state) => ({
