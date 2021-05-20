@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { create } from 'react-test-renderer';
 import { createStore, applyMiddleware } from 'redux';
 import combineReducers from '../reducers';
-import Alert from '../components/layout/Alert';
+import Alert from '../containers/layout/Alert';
 
 test('Alert renders correctly', () => {
   const store = createStore(combineReducers, applyMiddleware(thunk));
