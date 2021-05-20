@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import UserItem from '../../components/users/UserItem';
 import Spinner from '../../components/layout/Spinner';
 
-const Users = ({ users, loading }) => {
+const Users = ({ users, loading, filter }) => {
   if (loading) {
     return <Spinner />;
   }
@@ -15,9 +15,16 @@ const Users = ({ users, loading }) => {
     gridGap: '1rem',
   };
 
+  const filteringUsers = () => {
+    if (filter) {
+      return users.filter((user) => user.login.toLowerCase().includes(filter.toLowerCase()));
+    }
+    return users;
+  };
+
   return (
     <div style={userStyle}>
-      {users.map((user) => (
+      {filteringUsers().map((user) => (
         <UserItem key={user.id} user={user} />
       ))}
     </div>
@@ -27,11 +34,13 @@ const Users = ({ users, loading }) => {
 Users.propTypes = {
   users: PropTypes.arrayOf(Array).isRequired,
   loading: PropTypes.bool.isRequired,
+  filter: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   users: state.github.users,
   loading: state.github.loading,
+  filter: state.filter,
 });
 
 export default connect(mapStateToProps)(Users);
