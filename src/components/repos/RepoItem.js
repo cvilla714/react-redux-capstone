@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -10,9 +9,10 @@ const RepoItem = ({ repo }) => (
   </div>
 );
 
-RepoItem.propType = {
-  repo: PropTypes.object.isRequired,
+RepoItem.propTypes = {
+  repo: PropTypes.arrayOf(Object).isRequired,
   html_url: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default RepoItem;
