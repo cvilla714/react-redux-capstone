@@ -5,7 +5,7 @@ import {
   SEARCH_USERS,
   SET_LOADING,
   LOGS_ERROR,
-} from '../actions/types';
+} from '../components/actions/types';
 
 const initialState = {
   users: [],
