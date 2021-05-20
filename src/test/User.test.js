@@ -4,7 +4,7 @@ import { create } from 'react-test-renderer';
 import { createStore, applyMiddleware } from 'redux';
 import { MemoryRouter } from 'react-router-dom';
 import combineReducers from '../reducers';
-import User from '../components/users/User';
+import User from '../containers/users/User';
 
 test('User component renders correctly', () => {
   const store = createStore(combineReducers, applyMiddleware(thunk));
