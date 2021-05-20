@@ -7,7 +7,7 @@ import Spinner from '../../components/layout/Spinner';
 import { getUser, getUserRepos } from '../../components/actions/index';
 
 const User = ({
-  user, loading, getUser, getUserRepos, repos, match,
+  user, loading, repos, getUser, getUserRepos, match,
 }) => {
   useEffect(() => {
     getUser(match.params.login);
@@ -117,13 +117,22 @@ const User = ({
     </>
   );
 };
+
+User.defaultProps = {
+  loading: false,
+  match: '',
+  repos: [],
+  getUser: PropTypes.func,
+  getUserRepos: PropTypes.func,
+};
+
 User.propTypes = {
-  loading: PropTypes.bool.isRequired,
-  match: PropTypes.string.isRequired,
-  user: PropTypes.arrayOf(Object).isRequired,
-  repos: PropTypes.arrayOf(Array).isRequired,
-  getUser: PropTypes.func.isRequired,
-  getUserRepos: PropTypes.func.isRequired,
+  user: PropTypes.objectOf(Array).isRequired,
+  loading: PropTypes.bool,
+  match: PropTypes.string,
+  repos: PropTypes.arrayOf(Array),
+  getUser: PropTypes.func,
+  getUserRepos: PropTypes.func,
 };
 const mapStateToProps = (state) => ({
   user: state.github.user,
