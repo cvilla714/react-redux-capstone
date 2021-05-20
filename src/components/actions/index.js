@@ -45,8 +45,10 @@ export const getUser = (username) => async (dispatch) => {
         Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
       },
     });
+
     dispatch({
       type: GET_USER,
+
       payload: res.data,
     });
   } catch (error) {
