@@ -1,4 +1,4 @@
-import setAlert, { removeAlert } from '../actions/alertActions';
+import setAlert, { removeAlert } from '../components/actions/alertActions';
 
 describe('Action Types for setAlert', () => {
   test('categoryRequest should not return an empty action type', () => {
