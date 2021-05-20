@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { searchUsers, clearUsers } from '../../components/actions/index';
 import setAlert, { removeAlert } from '../../components/actions/alertActions';
+import FilterByName from './FilterByName';
 
 const Search = ({
   searchUsers, clearUsers, setAlert, users, removeAlert,
@@ -51,6 +52,7 @@ const Search = ({
           Clear
         </button>
       )}
+      {users.length > 1 && <FilterByName className="btn btn-light btn-block" />}
     </div>
   );
 };
