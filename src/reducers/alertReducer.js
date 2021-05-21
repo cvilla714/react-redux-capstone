@@ -1,6 +1,6 @@
 import { REMOVE_ALERT, SET_ALERT } from '../components/actions/types';
 
-const initialState = null;
+export const initialState = null;
 
 export default (state = initialState, action) => {
   switch (action.type) {
