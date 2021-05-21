@@ -9,7 +9,7 @@ const Alert = ({ alert }) => alert !== null && (
 );
 
 Alert.defaultProps = {
-  alert: null,
+  alert: '',
 };
 
 Alert.propTypes = {
