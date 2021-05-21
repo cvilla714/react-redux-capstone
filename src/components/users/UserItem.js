@@ -20,7 +20,7 @@ const UserItem = ({ user: { login, avatar_url: avatarUrl } }) => (
 );
 
 UserItem.propTypes = {
-  user: PropTypes.arrayOf(Object).isRequired,
+  user: PropTypes.objectOf(Array).isRequired,
 };
 
 export default UserItem;
