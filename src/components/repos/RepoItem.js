@@ -10,7 +10,7 @@ const RepoItem = ({ repo }) => (
 );
 
 RepoItem.propTypes = {
-  repo: PropTypes.arrayOf(Object).isRequired,
+  repo: PropTypes.arrayOf(Array).isRequired,
   html_url: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
 };
