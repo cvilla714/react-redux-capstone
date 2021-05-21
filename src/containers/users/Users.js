@@ -31,10 +31,14 @@ const Users = ({ users, loading, filter }) => {
   );
 };
 
+Users.defaultProps = {
+  filter: '',
+};
+
 Users.propTypes = {
   users: PropTypes.arrayOf(Array).isRequired,
   loading: PropTypes.bool.isRequired,
-  filter: PropTypes.string.isRequired,
+  filter: PropTypes.string,
 };
 
 const mapStateToProps = (state) => ({
