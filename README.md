@@ -38,6 +38,10 @@
 
 **Once you have gone through the process of installing the code you now run this command `npm run start` this will start the app and a new window will open in your browser with the app ready to be use**
 
+### Test
+
+**In order to run the test please type the following command from the terminal `npm run test`\***
+
 ## Authors
 
 👤 **Cosmel Villalobos**
