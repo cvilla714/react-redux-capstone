@@ -40,7 +40,7 @@
 
 ### Test
 
-**In order to run the test please type the following command from the terminal `npm run test`\***
+**_In order to run the test please type the following command from the terminal `npm run test`_**
 
 ## Authors
 
