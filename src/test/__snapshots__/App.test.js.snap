@@ -35,36 +35,32 @@ exports[`should render the correct content for the Calculator Page 1`] = `
   <div
     className="container"
   >
-    <div>
-      <div>
-        <form
-          className="form"
-          onSubmit={[Function]}
-        >
-          <input
-            name="text"
-            onChange={[Function]}
-            placeholder="Search User..."
-            type="text"
-            value=""
-          />
-          <input
-            className="btn btn-dark btn-block"
-            type="submit"
-            value="Search"
-          />
-        </form>
-      </div>
-      <div
-        style={
-          Object {
-            "display": "grid",
-            "gridGap": "1rem",
-            "gridTemplateColumns": "repeat(3,1fr)",
-          }
-        }
+    <form
+      className="form"
+      onSubmit={[Function]}
+    >
+      <input
+        name="text"
+        onChange={[Function]}
+        placeholder="Search User..."
+        type="text"
+        value=""
       />
-    </div>
+      <input
+        className="btn btn-dark btn-block"
+        type="submit"
+        value="Search"
+      />
+    </form>
+    <div
+      style={
+        Object {
+          "display": "grid",
+          "gridGap": "1rem",
+          "gridTemplateColumns": "repeat(3,1fr)",
+        }
+      }
+    />
   </div>
 </div>
 `;
