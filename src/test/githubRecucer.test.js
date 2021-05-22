@@ -1,4 +1,4 @@
-import githubReducer from '../reducers/githubReducer';
+import githubReducer from '../redux/reducers/githubReducer';
 
 describe('githubReducer', () => {
   it('should return the initial state', () => {
