@@ -1,5 +1,5 @@
-import * as actions from '../components/actions/index';
-import * as types from '../components/actions/types';
+import * as actions from '../redux/actions/index';
+import * as types from '../redux/actions/types';
 
 describe('actions', () => {
   it('should clear the users', () => {
