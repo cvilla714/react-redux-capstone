@@ -2,7 +2,7 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { create } from 'react-test-renderer';
 import { createStore, applyMiddleware } from 'redux';
-import combineReducers from '../reducers';
+import combineReducers from '../redux/reducers/index';
 import Search from '../containers/users/Search';
 
 test('Search renders correctly', () => {
