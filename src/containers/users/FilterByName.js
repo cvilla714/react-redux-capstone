@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { connect } from 'react-redux';
-import filter from '../../components/actions/filterAction';
+import filter from '../../redux/actions/filterAction';
 
 const FilterByName = ({ filter, className }) => {
   const [filtering, setFiltering] = useState(false);
