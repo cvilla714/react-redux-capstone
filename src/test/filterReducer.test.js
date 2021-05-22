@@ -1,4 +1,4 @@
-import filterReducer, { initialState } from '../reducers/filterReducer';
+import filterReducer, { initialState } from '../redux/reducers/filterReducer';
 
 describe('filter reducer', () => {
   it('should return the initial state', () => {
