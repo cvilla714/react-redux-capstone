@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { create } from 'react-test-renderer';
 import { createStore, applyMiddleware } from 'redux';
 import { MemoryRouter } from 'react-router-dom';
-import combineReducers from '../reducers';
+import combineReducers from '../redux/reducers/index';
 import User from '../containers/users/User';
 
 test('User component renders correctly', () => {
