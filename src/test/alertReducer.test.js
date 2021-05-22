@@ -1,4 +1,4 @@
-import alertReducer, { initialState } from '../reducers/alertReducer';
+import alertReducer, { initialState } from '../redux/reducers/alertReducer';
 
 describe('alert reducer', () => {
   it('should return the initial state', () => {
