@@ -9,11 +9,11 @@ const Alert = ({ alert }) => alert !== null && (
 );
 
 Alert.defaultProps = {
-  alert: '',
+  alert: {},
 };
 
 Alert.propTypes = {
-  alert: PropTypes.string,
+  alert: PropTypes.objectOf(Object),
 };
 
 const mapStateToProps = (state) => ({
