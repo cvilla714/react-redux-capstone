@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Repos from '../repos/Repos';
 import Spinner from '../../components/layout/Spinner';
-import { getUser, getUserRepos } from '../../components/actions/index';
+import { getUser, getUserRepos } from '../../redux/actions/index';
 
 const User = ({
   user, loading, repos, getUser, getUserRepos, match,
@@ -120,7 +120,7 @@ const User = ({
 
 User.defaultProps = {
   loading: false,
-  match: '',
+  match: {},
   repos: [],
   getUser: PropTypes.func,
   getUserRepos: PropTypes.func,
@@ -129,7 +129,7 @@ User.defaultProps = {
 User.propTypes = {
   user: PropTypes.objectOf(Array).isRequired,
   loading: PropTypes.bool,
-  match: PropTypes.string,
+  match: PropTypes.objectOf(Object),
   repos: PropTypes.arrayOf(Array),
   getUser: PropTypes.func,
   getUserRepos: PropTypes.func,
