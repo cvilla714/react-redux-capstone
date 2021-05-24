@@ -1,8 +1,8 @@
-# GitHub finder
+# GitHub Profile Finder
 
 > Project was about using the GitHub API to pull GittHub profiles
-> the latest repost, information such as name, location, hireable and more
-> ![screenshot]()
+> their 5 latest repost, information such as name, location, hireable and more
+> ![screenshot](./app_screenshot.png)
 
 ## Built With
 
@@ -15,7 +15,7 @@
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://determined-agnesi-a54f26.netlify.app/)
 
 ## Getting Started
 
@@ -38,6 +38,10 @@
 
 **Once you have gone through the process of installing the code you now run this command `npm run start` this will start the app and a new window will open in your browser with the app ready to be use**
 
+### Test
+
+**_In order to run the test please type the following command from the terminal `npm run test`_**
+
 ## Authors
 
 👤 **Cosmel Villalobos**
@@ -50,12 +54,17 @@
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page]().
+Feel free to check the [issues page](https://github.com/cvilla714/react-redux-capstone/pulls).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
+## Acknowledgment
+
+- Microverse
+- Marc-Antoine Roy on Behance
+
 ## 📝 License
 
-This project is [MIT]() licensed.
+This project is [MIT](https://github.com/cvilla714/react-redux-capstone/blob/development/LICENSE) licensed.

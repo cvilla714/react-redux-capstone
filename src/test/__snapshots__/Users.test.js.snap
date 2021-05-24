@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Users renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "display": "grid",
+      "gridGap": "1rem",
+      "gridTemplateColumns": "repeat(3,1fr)",
+    }
+  }
+/>
+`;
