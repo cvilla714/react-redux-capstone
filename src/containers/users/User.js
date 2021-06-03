@@ -65,7 +65,7 @@ const User = ({
             </>
           )}
           <a href={htmlUrl} className="btn btn-dark my-1">
-            Visit Github Profiel
+            Visit Github Profile
           </a>
           <ul>
             <li>
@@ -79,7 +79,7 @@ const User = ({
             <li>
               {company && (
                 <>
-                  <strong>Compnay: </strong>
+                  <strong>Company: </strong>
                   {company}
                 </>
               )}
@@ -87,7 +87,7 @@ const User = ({
             <li>
               {blog && (
                 <>
-                  <strong>Webiste: </strong>
+                  <strong>Website: </strong>
                   {blog}
                 </>
               )}
